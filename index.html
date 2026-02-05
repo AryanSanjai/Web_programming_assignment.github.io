@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Animated Neon Ball</title> 
+    <style> 
+        body { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background: #0d0221; /* Deep dark purple background */
+            margin: 0;
+        } 
+        .scene { 
+            position: relative; 
+            width: 200px; 
+            height: 300px; 
+            border-bottom: 4px solid #00d4ff; /* Cyan floor */
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        } 
+        .ball { 
+            position: absolute; 
+            bottom: 0; 
+            left: 50%; 
+            width: 60px; 
+            height: 60px; 
+            margin-left: -30px; 
+            border-radius: 50%; 
+            background: #7b2cbf; /* Initial Purple */
+            animation: bounce 1.2s ease-in-out infinite; 
+            box-shadow: 0 0 20px rgba(123, 44, 191, 0.6);
+        } 
+        @keyframes bounce { 
+            0% { 
+                transform: translateY(0) scale(1.2, 0.8); 
+                background: #7b2cbf; /* Purple at impact */
+            } 
+            25% { 
+                transform: translateY(-140px) scale(0.9, 1.1); 
+                background: #ff006e; /* Hot Pink on the way up */
+            } 
+            50% { 
+                transform: translateY(-220px) scale(1, 1); 
+                background: #00d4ff; /* Cyan at the peak */
+            } 
+            75% { 
+                transform: translateY(-140px) scale(0.9, 1.1); 
+                background: #ffbe0b; /* Gold on the way down */
+            } 
+            100% {
+                transform: translateY(0) scale(1.2, 0.8);
+                background: #7b2cbf;
+            }
+        } 
+    </style> 
+</head> 
+<body> 
+    <div class="scene"> 
+        <div class="ball"></div> 
+    </div> 
+</body> 
+</html>
