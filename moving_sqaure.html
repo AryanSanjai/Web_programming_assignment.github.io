@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <title>Animated Neon Square</title> 
+        <style> 
+            body { 
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                height: 100vh; 
+                background: #000; /* Pitch black background */
+                margin: 0;
+            } 
+             
+            .square { 
+                position: absolute; 
+                left: 50%; 
+                width: 60px; 
+                height: 60px; 
+                margin-left: -30px; 
+                border-radius: 15%; /* Slightly more rounded edges */
+                background: #39ff14; /* Initial Neon Green */
+                animation: bounce 1.2s ease-in-out infinite; 
+                box-shadow: 0 0 15px rgba(57, 255, 20, 0.5); /* Added a subtle glow */
+            } 
+
+            @keyframes bounce { 
+                0% { 
+                    transform: translateX(0px) scale(1.2, 0.8); 
+                    background: #39ff14; /* Neon Green */
+                    box-shadow: 0 0 20px #39ff14;
+                } 
+                25% { 
+                    transform: translateX(140px) scale(0.9, 1.1); 
+                    background: #ff00ff; /* Neon Magenta */
+                    box-shadow: 0 0 20px #ff00ff;
+                } 
+                50% { 
+                    transform: translateX(140px) scale(1, 1); 
+                    background: #00ffff; /* Neon Cyan */
+                    box-shadow: 0 0 20px #00ffff;
+                } 
+                75% { 
+                    transform: translateX(-50px) scale(0.9, 1.1); 
+                    background: #ffff00; /* Neon Yellow */
+                    box-shadow: 0 0 20px #ffff00;
+                } 
+                100% {
+                    transform: translateX(0px) scale(1.2, 0.8);
+                    background: #39ff14;
+                    box-shadow: 0 0 20px #39ff14;
+                }
+            } 
+        </style> 
+    </head> 
+    <body> 
+        <div class="square"></div> 
+    </body> 
+</html>
