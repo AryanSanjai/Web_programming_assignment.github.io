@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>Animated Pulsing Box</title> 
+<style> 
+body { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  background: #050505; /* Near-black for maximum contrast */
+  margin: 0;
+} 
+
+.box { 
+  width: 80px; 
+  height: 80px; 
+  background: #ff4500; /* Initial Orange-Red */
+  animation: combinedAnimation 2s infinite; 
+  box-shadow: 0 0 25px rgba(255, 69, 0, 0.5); /* Glowing effect */
+} 
+
+@keyframes combinedAnimation { 
+  0% { 
+    transform: translateX(-200px) rotate(0deg) scale(1.2); 
+    background: #ff4500; /* Lava Orange */
+    box-shadow: 0 0 30px #ff4500;
+  } 
+   
+  50% { 
+    transform: translateX(200px) rotate(180deg) scale(1); 
+    background: #d00000; /* Deep Magma Red */
+    box-shadow: 0 0 40px #d00000;
+  } 
+   
+  100% { 
+    transform: translateX(-200px) rotate(360deg) scale(1.2); 
+    background: #ffbe0b; /* Solar Yellow */
+    box-shadow: 0 0 30px #ffbe0b;
+  } 
+} 
+</style> 
+</head> 
+<body> 
+    <div class="box"></div> 
+</body> 
+</html>
