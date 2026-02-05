@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <title>Animated Prismatic Triangle</title> 
+        <style> 
+            body { 
+              display: flex; 
+              justify-content: center; 
+              align-items: center; 
+              height: 100vh; 
+              background: #1a1a1a; /* Charcoal gray background */
+              margin: 0;
+            } 
+             
+            .triangle { 
+              width: 0; 
+              height: 0; 
+              border-left: 60px solid transparent; 
+              border-right: 60px solid transparent; 
+              border-bottom: 100px solid #ffd700; /* Initial Gold */
+              animation: rotateTriangle 2s linear infinite, colorShift 3s linear infinite; 
+              transform-origin: 50% 66%; 
+              filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+            } 
+             
+            @keyframes rotateTriangle { 
+              from { 
+                transform: rotate(0deg); 
+              } 
+              to { 
+                transform: rotate(360deg); 
+              } 
+            }
+
+            @keyframes colorShift {
+              0% { border-bottom-color: #ffd700; } /* Gold */
+              33% { border-bottom-color: #9d4edd; } /* Purple */
+              66% { border-bottom-color: #00ff88; } /* Emerald */
+              100% { border-bottom-color: #ffd700; }
+            } 
+ 
+        </style> 
+    </head> 
+    <body> 
+        <div class="triangle"></div> 
+    </body> 
+</html>
